@@ -67,10 +67,15 @@ data(galton)
 fitModel  &lt;- lm(child ~., data=galton)
 </code></pre>
 
-<p>Then the child height is predicted using the model and the input height (for the parent).</p>
+<p>Then the child height is predicted using the model and the input height (for the parent).
+For example:</p>
 
 <pre><code class="r">inputHeight  &lt;- c(76)
 predict(fitModel,newdata=data.frame(parent=inputHeight))
+</code></pre>
+
+<pre><code>##     1 
+## 73.06
 </code></pre>
 
   </article>

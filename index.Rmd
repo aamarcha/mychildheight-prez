@@ -27,8 +27,9 @@ data(galton)
 fitModel  <- lm(child ~., data=galton)
 ```
 Then the child height is predicted using the model and the input height (for the parent).
+For example:
 
-```{r prediction, echo=T, results="hide"}
+```{r prediction, echo=T, results="show"}
 inputHeight  <- c(76)
 predict(fitModel,newdata=data.frame(parent=inputHeight))
 
