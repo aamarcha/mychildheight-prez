@@ -1,0 +1,56 @@
+---
+title       : My Child Height
+subtitle    : You can predit your child height
+author      : Aamarcha
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Purposes
+
+1. Predict the height of your child.
+2. Plot the prediction within knowns data.
+
+--- .class #methdology 
+
+## Methdology
+The fitted model used to predict child height :
+
+```{r model, echo=T, results="hide"}
+library(UsingR)
+data(galton)
+fitModel  <- lm(child ~., data=galton)
+```
+Then the child height is predicted using the model and the input height (for the parent).
+
+```{r prediction, echo=T, results="hide"}
+inputHeight  <- c(76)
+predict(fitModel,newdata=data.frame(parent=inputHeight))
+
+```
+
+--- .class #plotting
+## Plotting
+The predicted height of the child is shown within the galton data.
+
+```{r plotting, echo=F, results="hide"}
+inputHeight  <- 76
+childHeight  <- round(predict(fitModel,newdata=data.frame(parent=inputHeight))[[1]])
+plot(galton, xlim=c(40,100), ylim=c(60,95), main="Parent vs Child Height")
+lines(c(0,100) ,c(inputHeight,inputHeight),col="red",lwd=5)
+lines(c(childHeight,childHeight),c(0,100) ,col="green",lwd=5)
+abline(fitModel,col="blue")
+legend("topright", legend=c("your height","predicted child height"), lty=1,col=c("red","green"))
+```
+
+--- .class #end
+## Demo Time
+
+1. Go to MyChildHeight app <a href="http://aamarcha.shinyapps.io/MyChildHeight/">MyChildHeight</a>
+2. You can get the code on my Github repo <a href="https://github.com/aamarcha/mychildheight">MyChildHeight code</a>
+3. Enjoy !

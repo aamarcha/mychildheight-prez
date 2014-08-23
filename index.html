@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Child Height</title>
+  <meta charset="utf-8">
+  <meta name="description" content="My Child Height">
+  <meta name="author" content="Aamarcha">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>My Child Height</h1>
+    <h2>You can predit your child height</h2>
+    <p>Aamarcha<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Purposes</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Predict the height of your child.</li>
+<li>Plot the prediction within knowns data.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="methdology" style="background:;">
+  <hgroup>
+    <h2>Methdology</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The fitted model used to predict child height :</p>
+
+<pre><code class="r">library(UsingR)
+data(galton)
+fitModel  &lt;- lm(child ~., data=galton)
+</code></pre>
+
+<p>Then the child height is predicted using the model and the input height (for the parent).</p>
+
+<pre><code class="r">inputHeight  &lt;- c(76)
+predict(fitModel,newdata=data.frame(parent=inputHeight))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="plotting" style="background:;">
+  <hgroup>
+    <h2>Plotting</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The predicted height of the child is shown within the galton data.</p>
+
+<p><img src="assets/fig/plotting.png" alt="plot of chunk plotting"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="end" style="background:;">
+  <hgroup>
+    <h2>Demo Time</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Go to MyChildHeight app <a href="http://aamarcha.shinyapps.io/MyChildHeight/">MyChildHeight</a></li>
+<li>You can get the code on my Github repo <a href="https://github.com/aamarcha/mychildheight">MyChildHeight code</a></li>
+<li>Enjoy !</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Purposes'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Methdology'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Plotting'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Demo Time'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
