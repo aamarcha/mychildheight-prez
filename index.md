@@ -43,7 +43,6 @@ The predicted height of the child is shown within the galton data.
 
 --- .class #end
 ## Demo Time
-
 1. Go to MyChildHeight app <a href="http://aamarcha.shinyapps.io/MyChildHeight/">MyChildHeight</a>
 2. You can get the code on my Github repo <a href="https://github.com/aamarcha/mychildheight">MyChildHeight code</a>
 3. Enjoy !
