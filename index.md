@@ -18,7 +18,7 @@ knit        : slidify::knit2slides
 
 --- .class #methdology 
 
-## Methdology
+## Methodology
 The fitted model used to predict child height :
 
 
